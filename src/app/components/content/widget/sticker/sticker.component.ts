@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input } from '@angular/core';
 import { StickerModel } from '../../../../models/sticker.model';
 
 @Component({
@@ -6,13 +6,9 @@ import { StickerModel } from '../../../../models/sticker.model';
   templateUrl: './sticker.component.html',
   styleUrls: ['./sticker.component.css']
 })
-export class StickerComponent implements OnInit {
+export class StickerComponent {
 
   @Input() row: boolean;
   @Input() sticker: StickerModel;
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

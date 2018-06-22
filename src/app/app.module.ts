@@ -80,9 +80,6 @@ const reducers: ActionReducerMap<AppStateModel> = {
     RouterModule.forRoot(appRoutes),
     StoreModule.forRoot(reducers),
     environment.development ? StoreDevtoolsModule.instrument() : [],
-    // StoreModule.forRoot(reducers, {metaReducer}),
-    // EffectsModule.forRoot([]),
-
   ],
   providers: [],
   bootstrap: [AppComponent]

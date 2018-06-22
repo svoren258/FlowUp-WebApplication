@@ -15,7 +15,7 @@ export class WidgetformComponent implements OnInit {
   widgetForm: FormGroup;
   @Output() showForm = new EventEmitter<void>();
 
-  constructor(private store: Store<AppStateModel>) {
+  constructor(private readonly store: Store<AppStateModel>) {
   }
 
   ngOnInit() {

@@ -1,39 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { WidgetModel } from '../../../models/widget.model';
 import { Observable } from 'rxjs';
 import { AppStateModel } from '../../../models/app-state.model';
-import { $widgetState } from '../../../store/reducers/widgets.reducer';
+import { $widgetState, $widgetStateEmpty } from '../../../store/reducers/widgets.reducer';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
-
-  row = false;
+export class DashboardComponent {
   column = true;
 
-  widgets$: Observable<WidgetModel[]>;
-  constructor(private store: Store<AppStateModel>) { }
+  readonly widgets$: Observable<WidgetModel[]>;
+  readonly widgetsEmpty$: Observable<boolean>;
 
-  ngOnInit() {
+  constructor(private readonly store: Store<AppStateModel>) {
     this.widgets$ = this.store.select($widgetState);
+    this.widgetsEmpty$ = this.store.select($widgetStateEmpty);
   }
 
-  switchLayoutToRow(): void {
-    this.column = false;
-    this.row = true;
+  switchLayout(toColumn: boolean): void {
+    this.column = toColumn;
   }
-
-  switchLayoutToColumn(): void {
-    this.column = true;
-    this.row = false;
-  }
-
-  // addWidget(): void {
-  //   this.widgets.push(new WidgetComponent());
-  // }
-
 }

@@ -51,3 +51,4 @@ export function widgetReducer(
 }
 
 export const $widgetState = (state: AppStateModel) => state.widgets;
+export const $widgetStateEmpty = (state: AppStateModel) => state.widgets.length === 0;

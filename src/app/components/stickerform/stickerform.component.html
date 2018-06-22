@@ -13,7 +13,7 @@
         formControlName="stickerLabel"
         class="form-control">
       <span
-        *ngIf="!stickerForm.get('stickerLabel').valid && stickerForm.get('stickerLabel').touched"
+        *ngIf="!stickerForm.get('stickerLabel')?.valid && stickerForm.get('stickerLabel').touched"
         class="help-block">Please enter some text!</span>
     </div>
     <div class="form-group">

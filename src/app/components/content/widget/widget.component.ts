@@ -12,7 +12,7 @@ import { RemoveWidgetAction } from '../../../store/actions';
 })
 export class WidgetComponent  {
 
-  @Input() row: boolean;
+  @Input() layout: 'vertical' | 'horizontal';
   @Input() column: boolean;
   @Input() widget: WidgetModel;
 

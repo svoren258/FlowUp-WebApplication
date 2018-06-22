@@ -1,6 +1,6 @@
 <div
   class="widget-column"
-  [ngClass]="{'widget-column' : column, 'widget-row' : row}"
+  [ngClass]="{'widget-column' : layout === 'vertical', 'widget-row' : layout === 'horizontal'}"
 >
     <div class="close-btn">
       <a class="material-icons icon" (click)="removeWidget()">highlight_off</a>
@@ -10,7 +10,7 @@
     </div>
   <div
     class="separator-column"
-    [ngClass]="{'separator-column' : column, 'separator-row' : row}"
+    [ngClass]="{'separator-column' : layout === 'vertical', 'separator-row' : layout === 'horizontal'}"
   >
   </div>
 

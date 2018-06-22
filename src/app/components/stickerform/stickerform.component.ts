@@ -38,6 +38,7 @@ export class StickerformComponent implements OnInit {
       this.widgetId
     ]));
     this.showForm.emit();
+    this.stickerForm.reset();
   }
 }
 
