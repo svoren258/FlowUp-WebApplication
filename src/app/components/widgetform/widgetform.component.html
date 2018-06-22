@@ -1,0 +1,28 @@
+<div class="flex-container">
+  <div class="main-label">
+    <h1>Create Widget</h1>
+  </div>
+    <form [formGroup]="widgetForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <div class="label">
+          <label>Widget Label:</label>
+        </div>
+        <input
+          type="text"
+          id="widgetLabel"
+          formControlName="widgetLabel"
+          class="form-control">
+        <span
+          *ngIf="!widgetForm.get('widgetLabel').valid && widgetForm.get('widgetLabel').touched"
+          class="help-block">Please enter some text!</span>
+      </div>
+      <div class="submit-btn">
+        <button [disabled]="!widgetForm.get('widgetLabel').valid"
+                class="btn"
+                type="submit"
+        >
+          Create Widget
+        </button>
+      </div>
+    </form>
+</div>

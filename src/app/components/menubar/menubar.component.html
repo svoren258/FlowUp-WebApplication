@@ -1,0 +1,38 @@
+<div class="menu-bar">
+  <div class="square"></div>
+  <div class="routes">
+    <div id="inbox" class="inbox navigate">
+      <a class="link" routerLinkActive="active" [routerLink]="['/inbox']">
+        <a class="material-icons icon">move_to_inbox</a>
+        Inbox
+      </a>
+    </div>
+    <div id="dashboard" class="dashboard navigate">
+      <a class="link" routerLinkActive="active" [routerLink]="['/dashboard/projects']">
+        <a class="material-icons icon">dashboard</a>
+        Dashboard
+      </a>
+    </div>
+    <div id="tasks" class="tasks navigate">
+      <a class="link" routerLinkActive="active" [routerLink]="['/tasks']">
+        <a class="material-icons icon">assignment</a>
+        My Tasks
+      </a>
+    </div>
+  </div>
+  <div class="project-settings">
+    <div class="settings">
+      <p class="label">PROJECTS</p>
+      <a class="material-icons icon-settings">settings</a>
+    </div>
+    <button class="btn" (click)="showNewWidgetForm()">+ Add a project</button>
+  </div>
+  <app-options></app-options>
+
+  <app-modal [(shown)]="newWidgetFormShown">
+    <div class="widget-form">
+      <app-widgetform (showForm)="showNewWidgetForm(false)"></app-widgetform>
+    </div>
+  </app-modal>
+
+</div>

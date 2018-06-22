@@ -1,0 +1,77 @@
+.toolbar {
+  background: linear-gradient(to right, #F5F4F6 0%, #ffffff 0.5%);
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon {
+  margin-right: 15px;
+  color: #B7C6D3;
+  position: relative;
+  cursor: pointer;
+}
+
+.online {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  border: 2px solid white;
+  background-color: #00DD80;
+  top: 3px;
+  left: 13px;
+}
+
+.options {
+  display: flex;
+  justify-content: left;
+  margin-left: 30px;
+}
+
+.label {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  padding: 13px 10px 13px 10px;
+  cursor: pointer;
+}
+
+.option {
+  margin: 0 10px 0 10px;
+}
+
+.link:hover {
+  color: #8AF170;
+}
+
+.active {
+  color: #8AF170 !important;
+  border-bottom: 2px solid #8AF170 !important;
+}
+
+.link {
+  text-decoration: none;
+  color: #8699A8;
+  margin: 0 10px 0 10px;
+}
+
+.label:hover {
+  color: #8AF170;
+}
+
+.circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 20px;
+  background: #B7C6D3;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+}

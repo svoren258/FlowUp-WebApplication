@@ -1,0 +1,51 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.btn {
+  background: #00F47B;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 15px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  color: #6A6B6C;
+}
+
+.btn:hover {
+  background: #CCD6DF;
+}
+
+.btn:active {
+  background: #00F47B;;
+}
+
+.btn:disabled {
+  background: #ff0000;
+}
+
+.label {
+  font-weight: bold;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.help-block {
+  color: red;
+}

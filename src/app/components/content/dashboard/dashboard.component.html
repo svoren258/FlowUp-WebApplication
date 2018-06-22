@@ -1,0 +1,63 @@
+<div class="content">
+  <div class="head">
+    <div class="left">
+      <div class="square"></div>
+      <div class="square-label">
+        <p class="label">
+          landing pages
+        </p>
+        <p class="underlabel">
+          Website Redesign
+        </p>
+      </div>
+    </div>
+    <div class="switch-menu">
+      <div class="switch-layout" *ngIf="row">
+        <div class="switch-left-row" (click)="switchLayoutToColumn()">
+          <div class="vertical-row"></div>
+          <div class="vertical-row"></div>
+          <div class="vertical-row"></div>
+        </div>
+        <div class="switch-right-row" (click)="switchLayoutToRow()">
+          <div class="horizontal-row"></div>
+          <div class="horizontal-row"></div>
+          <div class="horizontal-row"></div>
+        </div>
+      </div>
+      <div class="switch-layout" *ngIf="column">
+        <div class="switch-left-column" (click)="switchLayoutToColumn()">
+          <div class="vertical-column"></div>
+          <div class="vertical-column"></div>
+          <div class="vertical-column"></div>
+        </div>
+        <div class="switch-right-column" (click)="switchLayoutToRow()">
+          <div class="horizontal-column"></div>
+          <div class="horizontal-column"></div>
+          <div class="horizontal-column"></div>
+        </div>
+      </div>
+    </div>
+    <div class="right-menu">
+      <a class="tasks menu-item" routerLinkActive="active" [routerLink]="">Tasks</a>
+      <a class="conversion menu-item" routerLinkActive="active" [routerLink]="['/dashboard/conversation']">Conversion</a>
+      <a class="report menu-item" routerLinkActive="active" [routerLink]="['/dashboard/report']">Report</a>
+      <a class="setting menu-item" routerLinkActive="active" [routerLink]="['/dashboard/settings']">Setting</a>
+    </div>
+  </div>
+
+  <div
+    class="widget-array-column"
+    [ngClass]="{'widget-array-column' : column, 'widget-array-row' : row}"
+  >
+    <div class="placeholder" *ngIf="!((widgets$ | async)?.length)">
+      <p>Placeholder</p>
+    </div>
+    <app-widget
+      *ngFor="let widget of (widgets$ | async)"
+      [widget]="widget"
+      [row]="row"
+      [column]="column"
+    >
+    </app-widget>
+  </div>
+</div>

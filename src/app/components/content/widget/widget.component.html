@@ -1,0 +1,35 @@
+<div
+  class="widget-column"
+  [ngClass]="{'widget-column' : column, 'widget-row' : row}"
+>
+    <div class="close-btn">
+      <a class="material-icons icon" (click)="removeWidget()">highlight_off</a>
+    </div>
+    <div class="heading">
+      {{widget.detail}}
+    </div>
+  <div
+    class="separator-column"
+    [ngClass]="{'separator-column' : column, 'separator-row' : row}"
+  >
+  </div>
+
+  <input class="task-input" placeholder="Add a task...">
+
+  <app-sticker
+    *ngFor="let sticker of widget.stickers"
+    [sticker]="sticker"
+    [row]="row"
+  >
+  </app-sticker>
+
+  <app-modal [(shown)]="newStickerFormShown">
+    <div class="sticker-form">
+      <app-stickerform [widgetId]="widget.id" (showForm)="showNewStickerForm(false)"></app-stickerform>
+    </div>
+  </app-modal>
+
+    <div class="add-btn">
+      <a class="material-icons add-icon" (click)="showNewStickerForm()">add_box</a>
+    </div>
+</div>

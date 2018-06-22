@@ -1,0 +1,15 @@
+<div
+  class="widget-part-vertical"
+  [ngClass]="{'widget-part-horizontal' : row}"
+>
+  <p class="description">
+    {{sticker.detail}}
+  </p>
+  <div class="end-part">
+    <a class="material-icons play-icon">play_circle_outline</a>
+    <div class="square"></div>
+    <p class="date">
+      {{sticker.date | date : "dd.MMMM"}}
+    </p>
+  </div>
+</div>
